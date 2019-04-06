@@ -12,6 +12,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "@google-cloud/storage": "^2.5.0",
     "@google-cloud/vision": "^0.25.0",
     "express": "3.x",
     "express3-handlebars": "*",

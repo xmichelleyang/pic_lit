@@ -6,7 +6,9 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+const vision = require('@google-cloud/vision');
+
 
 var index = require('./routes/index');
 // Example route
