@@ -1,3 +1,4 @@
+$(document).ready(function () {
 const player = document.getElementById('player');
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -18,9 +19,16 @@ captureButton.addEventListener('click', () => {
   captureButton.style.display = "none";
   retakeButton.style.display = "block";
   useButton.style.display = "block";
-  const img = canvas.toDataURL("image/png");
-
-
+  const dataURL = canvas.toDataURL();
+  $.ajax({
+    type: "POST",
+    url: "/image",
+    data: {
+      imgBase64: dataURL
+    }
+  })
+  //$.post("/image", dataURL, function(dataURL, status){
+    //console.log('${data} and status is ${status}')});
   // document.write('<img src="'+img+'"/>');
 });
 retakeButton.addEventListener('click', () => {
@@ -34,4 +42,5 @@ navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     // Attach the video stream to the video element and autoplay.
     player.srcObject = stream;
+});
 });
