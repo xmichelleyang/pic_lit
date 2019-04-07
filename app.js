@@ -4,7 +4,15 @@
  */
 
 var express = require('express');
-var http = require('http');
+var https = require('https');
+var auth = require('fs');
+
+var sslkey = auth.readFileSync('ssl-key.pem');
+var sslcert = auth.readFileSync('ssl-cert.pem')
+var options = {
+    key: sslkey,
+    cert: sslcert
+};
 var path = require('path');
 var handlebars = require('express3-handlebars');
 const vision = require('@google-cloud/vision');
@@ -46,6 +54,6 @@ app.get('/return_to_home', index.return_to_home);
 // Example route
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+https.createServer(options, app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
