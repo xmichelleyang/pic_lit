@@ -1,11 +1,17 @@
 #canvas {
   display:none;
+  width: 40em;
+  height: 30em;
 }
 #retake {
   display:none;
 }
 #use {
   display:none;
+}
+#player {
+  width: 40em;
+  height: 30em;
 }
 
 #canvas, #player {
