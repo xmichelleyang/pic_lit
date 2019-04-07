@@ -2,19 +2,15 @@
 <html>
 <head>
   <title>Capture Webcam</title>
-  <link rel="stylesheet" type="text/css" href="../public/css/webcam.css">
+  <link rel="stylesheet" type="text/css" href="css/webcam.css">
 </head>
 <body>
   <canvas id="canvas"></canvas>
-  <button id="capWeb">Take a Picture</button>
-  <div id = "div1" class = "modal">
-    <div class = "modal-content">
-      <span class="close">&times;</span>
-      <video autoplay id="player"></video>
-      <br>
-      <button id="capture">Capture</button>
-    </div>
-  </div>
-  <script src="../public/js/webcam.js"></script>
+  <video autoplay id="player"></video>
+  <br>
+  <button id="capture">Capture</button>
+  <button id="retake">Retake Photo</button>
+  <button id="use">Use Photo</button>
+  <script src="js/webcam.js"></script>
 </body>
 </html>
