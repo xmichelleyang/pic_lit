@@ -41,6 +41,8 @@ app.get('/webcam', index.webcam);
 app.get('/download', index.download);
 app.get('/download-screen', index.download_screen);
 app.get('/gen_text', index.gen_text);
+app.post('/image', index.image);
+app.get('/return_to_home', index.return_to_home);
 // Example route
 // app.get('/users', user.list);
 

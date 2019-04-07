@@ -11,10 +11,26 @@ exports.webcam = function(req, res){
 	res.render('webcam');
 };
 
+exports.image = function(req, res){
+	const fs = require('fs');
+  var base64result =  req.body.imgBase64.split(',')[1];
+  console.log(base64result);
+  const atob = require('atob');
+  const dec = atob(base64result);
+	fs.writeFile('user_text.png', dec, "binary", function(err){
+		if (err) throw err
+			console.log('File saved.')
+	});
+  res.send(200);
+};
+
 exports.download = function(req, res){
 	res.download('out.csv');
 };
 
+exports.return_to_home = function(req, res){
+	res.render('index');
+};
 exports.download_screen = function(req, res){
 	res.render('download');
 };
