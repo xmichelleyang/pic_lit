@@ -17,6 +17,7 @@ exports.image = function(req, res){
   console.log(base64result);
   const atob = require('atob');
   const dec = atob(base64result);
+  console.log(typeof dec);
 	fs.writeFile('user_text.png', dec, "binary", function(err){
 		if (err) throw err
 			console.log('File saved.')
@@ -30,6 +31,7 @@ exports.download = function(req, res){
 
 exports.download_screen = async function(req, res){
   console.log("About to convert to google OCR");
+
   // Writing CSV file
   const fs = require('fs');
 
