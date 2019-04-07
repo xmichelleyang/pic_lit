@@ -40,3 +40,20 @@ a {
 a:hover{
   text-decoration: none !important;
 }
+
+input[type=file] {
+  border-style: double;
+  display: none;
+
+}
+
+.custom-file-upload {
+  margin-bottom: 30px !important;
+  padding: 20px !important;
+  background-color: #ff8399 !important;
+  border-color: #ff8399 !important;
+}
+
+input[type=file] button {
+  background-color: #fff;
+}
