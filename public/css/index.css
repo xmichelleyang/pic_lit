@@ -12,6 +12,15 @@
 button {
   margin-bottom: 30px !important;
   padding: 20px !important;
+  background-color: #ff8399 !important;
+  border-color: #ff8399 !important;
+}
+
+button:hover {
+  margin-bottom: 30px !important;
+  padding: 20px !important;
+  background-color: #ec7d90 !important;
+  border-color: #ec7d90 !important;
 }
 body, html {
 	height: 100%;

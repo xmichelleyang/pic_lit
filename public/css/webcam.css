@@ -7,3 +7,8 @@
 #use {
   display:none;
 }
+
+#canvas, #player {
+  padding-bottom: 30px !important;
+  
+}
