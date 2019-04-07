@@ -9,8 +9,11 @@ exports.view = function(req, res){
 };
 
 exports.webcam = function(req, res){
-
 	res.render('webcam');
+};
+
+exports.download = function(req, res){
+	res.download('out.csv');
 };
 
 exports.gen_text = async function(req, res){

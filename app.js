@@ -12,7 +12,7 @@ const vision = require('@google-cloud/vision');
 
 var index = require('./routes/index');
 // Example route
-// var user = require('./routes/user');
+//var user = require('./routes/user');
 
 var app = express();
 
@@ -38,6 +38,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', index.view);
 app.get('/webcam', index.webcam);
+app.get('/download', index.download);
 // Example route
 // app.get('/users', user.list);
 
