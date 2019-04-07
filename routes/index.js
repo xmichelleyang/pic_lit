@@ -29,11 +29,9 @@ exports.download = function(req, res){
 	res.download('out.csv');
 };
 
-exports.download_screen = function(req, res){
-	res.render('download');
-};
+exports.download_screen = async function(req, res){
+  console.log("About to convert to google OCR");
 
-exports.gen_text = async function(req, res){
   // Writing CSV file
   const fs = require('fs');
 
@@ -42,7 +40,7 @@ exports.gen_text = async function(req, res){
 
   // Creates a client
   const client = new vision.ImageAnnotatorClient();
-  const fileName = 'user_text.jpg';
+  const fileName = 'user_text.png';
 
   // Performs text detection on the gcs file
   const [result] = await client.textDetection(fileName);
@@ -66,7 +64,6 @@ exports.gen_text = async function(req, res){
     }
   }
 
-
   // Convert array to csv manually
   let result_csv = "";
   for (i = 0; i < results_arr.length; i++) {
@@ -88,5 +85,11 @@ exports.gen_text = async function(req, res){
 	  };
 	  console.log("File has been created in", __dirname);
 	});
+
+  res.render('download');
+};
+
+async function gen_text(){
+
 
 }

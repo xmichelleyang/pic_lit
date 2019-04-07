@@ -5,6 +5,7 @@
 
 var express = require('express');
 var http = require('http');
+
 var path = require('path');
 var handlebars = require('express3-handlebars');
 //var fileUpload = require('express-fileupload');
@@ -71,7 +72,7 @@ app.post('/uploadfile', upload.single('myFile'), (req, res) => {
 	}
 });
 app.get('/download-screen', index.download_screen);
-app.get('/gen_text', index.gen_text);
+// app.get('/gen_text', index.gen_text);
 app.post('/image', index.image);
 // Example route
 // app.get('/users', user.list);
