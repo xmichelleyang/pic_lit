@@ -13,15 +13,10 @@ exports.webcam = function(req, res){
 	res.render('webcam');
 };
 
-exports.gen_text = async function(req, res){
-  // Import array to CSV library
-  const { convertArrayToCSV } = require('convert-array-to-csv');
-  const converter = require('convert-array-to-csv');
 
+exports.gen_text = async function(req, res){
   // Writing CSV file
-  const fastcsv = require('fast-csv');
   const fs = require('fs');
-  const ws = fs.createWriteStream("out.csv");
 
   // Imports the Google Cloud client libraries
   const vision = require('@google-cloud/vision');
@@ -51,34 +46,29 @@ exports.gen_text = async function(req, res){
       }
     }
   }
-  console.log(result_obj);
-  // const csvFromArrayOfObjects = convertArrayToCSV(result_obj);
-  //
-  // console.log(csvFromArrayOfObjects);
-  //
 
-  fastcsv.write(result_obj).pipe(ws);
 
-  // let csvContent = "data:text/csv;charset=utf-8,";
+  // Convert array to csv manually
+  // Convert array to an object
+  let result_csv = "";
+  for (i = 0; i < results_arr.length; i++) {
+    if (i % 2 == 0){
+      result_csv += results_arr[i] + '\t'
+    }
+    else {
+      result_csv += results_arr[i] + '\n'
+    }
+  }
 
-  // results_arr.forEach(function(rowArray){
-  //    let row = rowArray.join("\t,");
-  //    csvContent += row + "\r\n";
-  // });
-  //
-  // var encodedUri = encodeURI(csvContent);
-  // window.open(encodedUri);
-  // console.log(csvContent);
+  console.log("result csv", result_csv);
 
-  // Put terms into two separate arrays
-  // let terms = [];
-  // let definitions = [];
-  // for (i = 0; i < results_arr.length; i++) {
-  //   if (i % 2 == 0){
-  //     terms.append(results_arr[i]);
-  //   }
-  //   else {
-  //     definitions.append(results_arr[i]);
-  //   }
-  // }
+  fs.writeFile("out.csv", result_csv, (err) => {
+	  if (err) {
+	      console.error(err);
+				res.send(400);
+	      return;
+	  };
+	  console.log("File has been created in", __dirname);
+	});
+
 }
