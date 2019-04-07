@@ -13,3 +13,8 @@
   width: 40em;
   height: 30em;
 }
+
+#canvas, #player {
+  padding-bottom: 30px !important;
+  
+}
