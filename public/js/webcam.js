@@ -8,7 +8,7 @@ $(document).ready(function () {
   const parent = document.getElementById("div1");
 
   const constraints = {
-    video: { facingMode: { exact: "environment" } },
+    video: { facingMode: "environment" },
   };
 
   captureButton.addEventListener('click', () => {
