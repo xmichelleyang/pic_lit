@@ -1,0 +1,84 @@
+.centertextalign {
+  text-align: center;
+}
+
+.centerobjectalign {
+    top: 50%;
+    position: fixed;
+    left: 33%;
+}
+
+#logo {
+    text-align: center;
+    height: 90%;
+    margin-top: 5px;
+}
+
+.menubar {
+position: fixed;
+width: 100%
+}
+
+.menubarbackground {
+background-color: #0E96FA; /*darkerblue*/
+position: fixed;
+top: 0;
+left: 0;
+height: 18%;
+width: 100%;
+}
+
+#button { /*button class*/
+    background-color: #65BBFA; /*lightblue*/
+    border-radius: 10px;
+    border-color: #0E96FA; /*darkerblue*/
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 30px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#takephotobutton { /*button class for take photo option */
+    background-color: #65BBFA; /*lightblue*/
+    border-radius: 50px;
+    border-color: #0E96FA; /*darkerblue*/
+    border-width: thick;
+    padding: 25px 50px;
+    font-size: 25px;
+    font-variant: small-caps;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#takephotobutton:hover {
+    background-color: #65BBFA;
+    color: white;
+}
+
+#importphotobutton { /*button class for import photo option */
+    background-color: #65BBFA;
+    border-radius: 50px;
+    border-color: #0E96FA;
+    border-width: thick;
+    padding: 25px 40px;
+    font-size: 25px;
+    font-variant: small-caps;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#importphotobutton:hover {
+    background-color: #65BBFA;
+    color: white;
+}
+
+#backbutton { /*button to link back to the previous page*/
+    background-color: #65BBFA;
+    border-radius: 50%;
+    border-color: #0E96FA;
+    border-width: thick;
+    font-size: 15px;
+}
