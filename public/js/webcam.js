@@ -18,8 +18,10 @@ captureButton.addEventListener('click', () => {
   captureButton.style.display = "none";
   retakeButton.style.display = "block";
   useButton.style.display = "block";
-  //var img = canvas.toDataURL("image/png");
-  //document.write('<img src="'+img+'"/>');
+  const img = canvas.toDataURL("image/png");
+
+
+  // document.write('<img src="'+img+'"/>');
 });
 retakeButton.addEventListener('click', () => {
   canvas.style.display = "none";
