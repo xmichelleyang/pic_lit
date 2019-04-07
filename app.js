@@ -64,7 +64,7 @@ app.post('/uploadfile', upload.single('myFile'), (req, res) => {
 		const atob = require('atob');
 //  const dec = atob(base64result);
 		console.log(typeof req.file);
-  	res.send(200);
+    res.redirect("download-screen");
 	} else{
 		console.log('failed');
 		var filename = 'file not uploaded';

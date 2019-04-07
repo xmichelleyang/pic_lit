@@ -32,11 +32,6 @@ body, html {
   width: 300px;
 }
 
-#logo2 {
-    padding-bottom:10px;
-}
-
-
 a {
   color: white !important;
 }
@@ -44,7 +39,20 @@ a {
 a:hover{
   text-decoration: none !important;
 }
-.bottom-container {
-    justify-content: center;
-    bottom: 10px;
+
+input[type=file] {
+  border-style: double;
+  display: none;
+
+}
+
+.custom-file-upload {
+  margin-bottom: 30px !important;
+  padding: 20px !important;
+  background-color: #ff8399 !important;
+  border-color: #ff8399 !important;
+}
+
+input[type=file] button {
+  background-color: #fff;
 }

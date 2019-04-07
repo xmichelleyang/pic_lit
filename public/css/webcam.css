@@ -1,7 +1,7 @@
 #canvas {
   display:none;
-  width: 40em;
-  height: 30em;
+  width: 640px;
+  height: 480px;
 }
 #retake {
   display:none;
@@ -10,11 +10,15 @@
   display:none;
 }
 #player {
-  width: 40em;
-  height: 30em;
+  width: 640px;
+  height: 480px;
 }
 
 #canvas, #player {
   padding-bottom: 30px !important;
-  
+  height: 600px !important;
+
+}
+.media-container {
+  width: 100vw;
 }
