@@ -14,8 +14,10 @@
   "dependencies": {
     "@google-cloud/storage": "^2.5.0",
     "@google-cloud/vision": "^0.25.0",
+    "convert-array-to-csv": "^1.0.6",
     "express": "3.x",
     "express3-handlebars": "*",
+    "fast-csv": "^2.4.1",
     "mongodb": "*",
     "mongoose": "*"
   },
