@@ -39,11 +39,12 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/webcam', index.webcam);
 app.get('/download', index.download);
+app.get('/import_photo', index.import_photo);
 app.get('/download-screen', index.download_screen);
 app.get('/gen_text', index.gen_text);
-app.get('/return_to_home', index.return_to_home);
 // Example route
 // app.get('/users', user.list);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

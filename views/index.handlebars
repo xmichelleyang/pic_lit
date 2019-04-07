@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Test Page</title>
 </head>
 <body>
 	<a href = "webcam">Take Photo</a>
-	<a hread = "import">Import Photo</a>
+
+	<form action="/uploadfile" enctype="multiplart/form-data" method="POST">
+		<label for="import_button"><a>
+			Import Photo </label>
+		<input id="import_button"type="file" name="myFile" style="display:none" />
+</a>
 </body>
 </html>
