@@ -8,7 +8,7 @@ $(document).ready(function () {
   const parent = document.getElementById("div1");
 
   const constraints = {
-    video: { facingMode: "environment" },
+    video: { facingMode: "environment"   },
   };
 
   captureButton.addEventListener('click', () => {
@@ -27,6 +27,7 @@ $(document).ready(function () {
 
 
   useButton.addEventListener('click', () => {
+    player.srcObject.getVideoTracks().forEach(track => track.stop());
     const dataURL = canvas.toDataURL();
     $.ajax({
       type: "POST",
@@ -36,7 +37,7 @@ $(document).ready(function () {
       }
     })
     window.location.href = "download-screen";
-  })
+  });
   retakeButton.addEventListener('click', () => {
     canvas.style.display = "none";
     player.style.display = "block";
