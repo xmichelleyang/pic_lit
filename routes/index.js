@@ -28,11 +28,8 @@ exports.download = function(req, res){
 	res.download('out.csv');
 };
 
-exports.return_to_home = function(req, res){
-	res.render('index');
-};
 exports.download_screen = async function(req, res){
-  console.log("About to convert to google OCR"); 
+  console.log("About to convert to google OCR");
   // Writing CSV file
   const fs = require('fs');
 
