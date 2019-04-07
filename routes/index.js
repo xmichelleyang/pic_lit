@@ -4,12 +4,10 @@
  */
 
 exports.view = function(req, res){
-
   res.render('index');
 };
 
 exports.webcam = function(req, res){
-
 	res.render('webcam');
 };
 
@@ -26,6 +24,16 @@ exports.image = function(req, res){
   res.send(200);
 };
 
+exports.download = function(req, res){
+	res.download('out.csv');
+};
+
+exports.return_to_home = function(req, res){
+	res.render('index');
+};
+exports.download_screen = function(req, res){
+	res.render('download');
+};
 
 exports.gen_text = async function(req, res){
   // Writing CSV file
@@ -62,7 +70,6 @@ exports.gen_text = async function(req, res){
 
 
   // Convert array to csv manually
-  // Convert array to an object
   let result_csv = "";
   for (i = 0; i < results_arr.length; i++) {
     if (i % 2 == 0){
