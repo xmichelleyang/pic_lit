@@ -16,7 +16,8 @@
 
 #canvas, #player {
   padding-bottom: 30px !important;
-  
+  height: 600px;
+
 }
 .media-container {
   width: 100vw;
