@@ -78,3 +78,6 @@ exports.view = function(req, res){
 //
 //
 // };
+exports.webcam = function(req, res){
+	res.render('webcam');
+};

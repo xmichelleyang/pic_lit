@@ -37,6 +37,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/webcam', index.webcam);
 // Example route
 // app.get('/users', user.list);
 
