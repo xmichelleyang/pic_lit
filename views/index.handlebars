@@ -6,10 +6,14 @@
 <body>
 	<a href = "webcam">Take Photo</a>
 
-	<form action="/uploadfile" enctype="multiplart/form-data" method="POST">
-		<label for="import_button"><a>
+	<form id="form" action="/uploadfile" enctype="multipart/form-data" method="POST">
+	<label for="import_button">
 			Import Photo </label>
-		<input id="import_button"type="file" name="myFile" style="display:none" />
-</a>
+		<input id="import_button" type="file" name="myFile"/>
+</form>
+<script> document.getElementById("import_button").onchange = function(){
+	document.getElementById("form").submit();
+};
+</script>
 </body>
 </html>

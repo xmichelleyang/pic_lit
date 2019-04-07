@@ -17,6 +17,7 @@ exports.image = function(req, res){
   console.log(base64result);
   const atob = require('atob');
   const dec = atob(base64result);
+  console.log(typeof dec);
 	fs.writeFile('user_text.png', dec, "binary", function(err){
 		if (err) throw err
 			console.log('File saved.')
@@ -27,12 +28,6 @@ exports.image = function(req, res){
 exports.download = function(req, res){
 	res.download('out.csv');
 };
-
-exports.import_photo = function(req, res){
-//	res.render('');
-	
-};
-
 
 exports.download_screen = function(req, res){
 	res.render('download');
